@@ -173,7 +173,8 @@ function askQuestion() {
     isCor = false;
     isCorrect.innerHTML = `У вас осталось попыток: ${attemptNum}`;
     answerNum.innerHTML = `Вопрос номер ${counter + 1} / ${quiz.length} `;
-    questionAndAnswers = quiz[counter][Math.round(Math.random() * (2 - 0) + 0)];
+    questionAndAnswers = quiz[counter][Math.round(Math.random() * ((quiz[counter].length - 1) - 0) + 0)];
+    console.log(questionAndAnswers);
     question.innerHTML = questionAndAnswers[0];
 }
 
