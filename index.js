@@ -181,7 +181,7 @@ butCheck.addEventListener("click", () => {
     if (attemptNum > 0 && !isCor) {
         attemptNum--;
         for (let j = 1; j < questionAndAnswers.length; j++) {
-            if (answer.value.toLowerCase() === questionAndAnswers[j].toLowerCase()) {
+            if (answer.value.toLowerCase().trim() === questionAndAnswers[j].toLowerCase().trim()) {
                 isCor = true;
                 mark++;
                 break;
