@@ -3,18 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://kirillprogrammertop1gg.github.io/normalize/index.min.css">
+    <link rel="stylesheet" href="./styles/main.min.css">
     <title>MicroTests</title>
     <meta name="MicroTests">
 </head>
 <body>
-    <h1 class="title">MicroTests</h1>
-    <p class="answer-num"></p>
-    <p class="question"></p>
-    <input type="text" class="input-answer">
-    <button class="but-check">Check</button>
-    <p class="isCorrect"></p>
-    
-    <button class="nextBut">Next</button>
+    <header class="header">
+        <img class="header__logo" src="./imgs/logo.png" height="70" alt="Logo">
+    </header>
+    <main class="main">
+        <section class="materials" style="opacity: 1;">
+            <h2 class="materials__title">Матеріали по тестам:</h2>
+        </section>
+        <section class="tests" style="opacity: 1;">
+            <h2 class="tests__title">Оберіть свій тест</h2>
+            <ul class="cards">
+                <li class="cards__item">
+                    <h3 class="cards__title">d</h3>
+                    <p class="cards__data"></p>
+                    <button class="cards__button" testnum="0">1</button>
+                </li>
+                <li class="cards__item">
+                    <h3 class="cards__title"></h3>
+                    <p class="cards__data"></p>
+                    <button class="cards__button" testnum="1">2</button>
+                </li>
+                <li class="cards__item">
+                    <h3 class="cards__title"></h3>
+                    <p class="cards__data"></p>
+                    <button class="cards__button" testnum="2">3</button>
+                </li>
+            </ul>
+        </section>
+        <section class="test" style="opacity: 1;">
+            <p class="test_stopwatch" testprogress='0'></p>
+            <p class="test__answerNum"></p>
+            <p class="test__question"></p>
+            <input type="text" class="test__input">
+            <button class="test__check">Check</button>
+            <p class="test__isCorrect"></p>
+            <button class="test__next">Next</button>
+        </section>
+        <section class="results" style="opacity: 1;">
+            <p class="results__result">results</p>
+        </section>
+    </main>
+
     <script type="module" src="./index.js"></script>
+    <script type="module" src="./stopwatch.js"></script>
 </body>
 </html>

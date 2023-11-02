@@ -1,0 +1,12 @@
+body {
+  background-color: #393A3B;
+}
+
+.header {
+  background-color: #98DB81;
+  padding: 10px 0;
+}
+.header__logo {
+  display: block;
+  margin: 0 auto;
+}/*# sourceMappingURL=main.css.map */
