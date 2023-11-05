@@ -72,6 +72,7 @@ const hideElement = (el) => {
     el.style.position = 'absolute';
     el.style.pointerEvents = 'none';
     el.style.opacity = '0';
+    el.style.top = '-100%';
 };
 
 function askQuestion() {
@@ -147,33 +148,34 @@ nextBut.addEventListener("click", () => {
 
 hideElement(resultSection);
 hideElement(testSection);
+let materialsFullList = '';
+for (let i = 0; i < quiz.length; i++) {
+    let materialsList = `<ul class='questions__list'>`;
+    for (let j = 0; j < quiz[i].length; j++){
+        materialsList += `<li class=questions__item'>Питання ${j + 1}:`;
+        let questnAndAnswers = `<ul class='questionAndAnswers'><li class='questionAndAnswers__question'>Основне питання: ${quiz[i][j][0][0]}, відповіді:</li>`;
+        for (let a = 1; a < quiz[i][j][0].length; a++){
+            questnAndAnswers += `<li class='questionAndAnswers__answer'>${quiz[i][j][0][a]}</li>`
+        }
+        questnAndAnswers += `</ul>`;
+        materialsList += questnAndAnswers;  
+        for (let k = 1; k < quiz[i][j].length; k++){             
+            questnAndAnswers = `<ul class='questionAndAnswers'><li class='questionAndAnswers__question'>Альтернативне питання: ${quiz[i][j][k][0]}, відповіді:</li>`;
+            for (let a = 1; a < quiz[i][j][k].length; a++){
+                questnAndAnswers += `<li class='questionAndAnswers__answer'>${quiz[i][j][k][a]}</li>`
+            }
+            questnAndAnswers += `</ul>`;
+            materialsList += questnAndAnswers;  
+        }
+        materialsList += `</li>`;
+    }
+    materialsList += `</ul>`;
+    materialsFullList += `<li class='materials__item'><h3 class='materials__subtitle'>Тест ${i + 1}:</h3>${materialsList}</li>`;
+}
+materialsSection.innerHTML += `<ul class='materials__list'>${materialsFullList}</ul>`;
 window.onload = () => {
     materialsSection.style.transition = 'all 0.3s ease-in-out';
     testsSection.style.transition = 'all 0.3s ease-in-out';
     testSection.style.transition = 'all 0.3s ease-in-out';
     resultSection.style.transition = 'all 0.3s ease-in-out';
-    for (let i = 0; i < quiz.length; i++) {
-        let materialsList = `<ul class='materials__list'>`;
-        for (let j = 0; j < quiz[i].length; j++){
-            materialsList += `<li class=materials__item'>Питання ${j + 1}:`;
-            let questnAndAnswers = `<ul class='questionAndAnswers'><li class='questionAndAnswers__question'>Основне питання: ${quiz[i][j][0][0]}, відповіді:</li>`;
-            for (let a = 1; a < quiz[i][j][0].length; a++){
-                questnAndAnswers += `<li class='questionAndAnswers__answer'>${quiz[i][j][0][a]}</li>`
-            }
-            questnAndAnswers += `</ul>`;
-            materialsList += questnAndAnswers;  
-            for (let k = 1; k < quiz[i][j].length; k++){             
-                questnAndAnswers = `<ul class='questionAndAnswers'><li class='questionAndAnswers__question'>Альтернативне питання: ${quiz[i][j][k][0]}, відповіді:</li>`;
-                for (let a = 1; a < quiz[i][j][k].length; a++){
-                    questnAndAnswers += `<li class='questionAndAnswers__answer'>${quiz[i][j][k][a]}</li>`
-                }
-                questnAndAnswers += `</ul>`;
-                materialsList += questnAndAnswers;  
-            }
-            materialsList += `</li>`;
-        }
-        materialsList += `</ul>`;
-        materialsSection.innerHTML += `<h3 class='materials__subtitle'>Тест ${i + 1}:</h3>${materialsList}`;
-    }
-
 }

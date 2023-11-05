@@ -1,0 +1,8 @@
+@mixin text-style($font-weight, $font-size, $line-height, $text-align, $color) {
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    text-align: $text-align;
+    color: $color;
+    font-family: 'Comfortaa';
+}

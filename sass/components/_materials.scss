@@ -1,0 +1,28 @@
+.materials{
+    padding: 40px 30px;
+    &__title{
+        @include text-style(500, 28px, 1.25, center, #F9F871);
+    }
+    &__list{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        margin-top: 20px;
+    }
+    &__item{
+        background-color: #F9F871;
+        border-radius: 10px;
+        padding: 10px;
+        min-width: 260px;
+        width: 360px;
+    }
+    &__subtitle{
+        @include text-style(600, 23px, 1.2, center, #3D606A);
+    }
+}
+.questions{
+    &__list{
+        
+    }
+}

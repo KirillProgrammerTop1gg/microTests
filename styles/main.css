@@ -1,5 +1,11 @@
+html, body {
+  height: 100%;
+}
+
 body {
-  background-color: #393A3B;
+  background-color: #338A89;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -9,4 +15,50 @@ body {
 .header__logo {
   display: block;
   margin: 0 auto;
+}
+
+.materials {
+  padding: 40px 30px;
+}
+.materials__title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.25;
+  text-align: center;
+  color: #F9F871;
+  font-family: "Comfortaa";
+}
+.materials__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 20px;
+}
+.materials__item {
+  background-color: #F9F871;
+  border-radius: 10px;
+  padding: 10px;
+  min-width: 260px;
+  width: 360px;
+}
+.materials__subtitle {
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 1.2;
+  text-align: center;
+  color: #3D606A;
+  font-family: "Comfortaa";
+}
+
+.footer {
+  background-color: #98DB81;
+  padding: 30px 0;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  text-align: center;
+  color: #393A3B;
+  font-family: "Comfortaa";
+  margin-top: auto;
 }/*# sourceMappingURL=main.css.map */

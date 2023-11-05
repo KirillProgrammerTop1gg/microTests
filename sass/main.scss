@@ -1,3 +1,9 @@
-@import "./components/_body.scss";
+@import "./utils/_vars.scss";
+@import "./utils/_mixin.scss";
+@import "./components/_general.scss";
 @import "./components/_header.scss";
+@import "./components/_materials.scss";
+@import "./components/_tests.scss";
 @import "./components/_test.scss";
+@import "./components/_results.scss";
+@import "./components/_footer.scss";

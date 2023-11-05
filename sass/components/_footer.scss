@@ -1,0 +1,6 @@
+.footer{
+    background-color: #98DB81;
+    padding: 30px 0;
+    @include text-style(600, 22px, 1.25, center, #393A3B);
+    margin-top: auto;
+}
